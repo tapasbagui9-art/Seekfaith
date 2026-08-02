@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suvendu Adhikari — Chief Minister of West Bengal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=Tiro+Bangla&display=swap" rel="stylesheet">
+<style>
+/* ========= TOKENS ========= */
+:root{
+  --ink:#0d0d0f;
+  --paper:#f7f4ee;
+  --paper-2:#efe9dc;
+  --gold:#b8925a;
+  --gold-2:#d9b877;
+  --text-ink:#f2efe7;
+  --text-paper:#17161a;
+  --muted-ink:#9a988f;
+  --muted-paper:#6f6a5d;
+  --line:rgba(242,239,231,0.14);
+  --line-dark:rgba(23,22,26,0.12);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;background:var(--ink);color:var(--text-ink);
+  font-family:'IBM Plex Sans', sans-serif;font-weight:400;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{font-family:'Fraunces', serif;font-weight:500;letter-spacing:-0.01em;margin:0;}
+.bn{font-family:'Tiro Bangla', serif;}
+a{color:inherit;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1160px;margin:0 auto;padding:0 40px;}
+::selection{background:var(--gold);color:var(--ink);}
+:focus-visible{outline:1px solid var(--gold);outline-offset:3px;}
+
+/* ========= NAV ========= */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,13,15,0.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+nav{max-width:1160px;margin:0 auto;padding:22px 40px;display:flex;align-items:center;justify-content:space-between;}
+.brand{display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted-ink);text-decoration:none;}
+.brand strong{color:var(--text-ink);font-family:'Fraunces',serif;font-weight:500;font-size:16px;letter-spacing:0;text-transform:none;}
+.navlinks{display:flex;gap:34px;font-size:13px;align-items:center;}
+.navlinks a{text-decoration:none;color:var(--muted-ink);transition:color .2s;letter-spacing:0.03em;}
+.navlinks a:hover,.navlinks a.active{color:var(--text-ink);}
+.navlinks .cta{border:1px solid var(--line);padding:9px 18px;color:var(--text-ink);}
+.navlinks .cta:hover{border-color:var(--gold);color:var(--gold-2);}
+.navtoggle{display:none;background:none;border:none;color:var(--text-ink);font-size:20px;cursor:pointer;padding:4px;}
+@media (max-width:860px){
+  .navlinks{position:fixed;top:65px;left:0;right:0;background:var(--ink);flex-direction:column;align-items:flex-start;
+    padding:24px 40px 32px;gap:18px;border-bottom:1px solid var(--line);transform:translateY(-130%);opacity:0;
+    transition:transform .25s ease, opacity .25s ease;pointer-events:none;}
+  .navlinks.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+  .navtoggle{display:block;}
+}
+
+/* ========= SECTION SHELLS ========= */
+section{position:relative;}
+.section-pad{padding:140px 0;}
+.section-pad-sm{padding:90px 0;}
+.on-paper{background:var(--paper);color:var(--text-paper);}
+.on-ink{background:var(--ink);color:var(--text-ink);}
+.section-head{max-width:600px;margin-bottom:72px;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.eyebrow::before{content:"";width:30px;height:1px;background:currentColor;display:inline-block;}
+.section-head h2{font-size:clamp(28px,3.8vw,42px);line-height:1.1;font-weight:500;}
+.section-head p{margin-top:18px;font-size:16.5px;color:var(--muted-paper);max-width:480px;}
+.on-ink .section-head p{color:var(--muted-ink);}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease, transform .8s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+/* ========= HERO ========= */
+.hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:72px;padding-top:130px;}
+.hero-media{position:absolute;inset:0;z-index:0;}
+.hero-media img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);}
+.hero-media::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(13,13,15,0.35) 0%, rgba(13,13,15,0.55) 45%, rgba(13,13,15,0.96) 100%);}
+.hero-cap{position:absolute;right:40px;bottom:24px;z-index:1;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(242,239,231,0.5);}
+.eyebrow.on-hero{color:var(--gold-2);}
+.hero-title{font-size:clamp(38px,6.6vw,84px);line-height:1.04;font-weight:500;color:var(--text-ink);max-width:880px;position:relative;z-index:1;}
+.hero-title em{font-style:italic;font-weight:400;color:var(--gold-2);}
+.hero-sub{margin-top:26px;max-width:540px;font-size:17px;color:var(--muted-ink);position:relative;z-index:1;}
+.hero-ctas{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:1;}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;font-size:13.5px;font-weight:500;letter-spacing:0.03em;text-decoration:none;transition:opacity .18s ease, border-color .18s ease, background .18s ease;border:1px solid transparent;}
+.btn-primary{background:var(--gold-2);color:var(--ink);}
+.btn-primary:hover{opacity:0.88;}
+.btn-ghost{border-color:var(--line);color:var(--text-ink);}
+.btn-ghost:hover{border-color:var(--gold-2);color:var(--gold-2);}
+.hero-meta{margin-top:56px;display:grid;grid-template-columns:repeat(4,auto);gap:48px;position:relative;z-index:1;border-top:1px solid var(--line);padding-top:32px;max-width:760px;}
+@media (max-width:720px){.hero-meta{grid-template-columns:repeat(2,1fr);gap:28px 32px;}}
+.hero-meta .m-num{font-family:'Fraunces',serif;font-size:26px;color:var(--gold-2);font-weight:500;}
+.hero-meta .m-label{font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase;color:var(--muted-ink);margin-top:5px;}
+
+/* ========= ABOUT ========= */
+.intro{display:grid;grid-template-columns:0.85fr 1.15fr;gap:80px;align-items:center;}
+@media (max-width:860px){.intro{grid-template-columns:1fr;gap:40px;}}
+.intro-figure{aspect-ratio:4/5;overflow:hidden;position:relative;}
+.intro-figure img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);}
+.intro-body p{font-size:16.5px;margin:0 0 20px;color:var(--muted-paper);}
+.intro-body p:last-child{margin-bottom:0;}
+.intro-body .lede{font-family:'Fraunces',serif;font-size:25px;font-weight:400;color:var(--text-paper);line-height:1.4;margin-bottom:28px;}
+.intro-body a.btn-ghost{border-color:var(--line-dark);color:var(--text-paper);margin-top:28px;}
+.intro-body a.btn-ghost:hover{border-color:var(--gold);color:#8a683d;}
+
+/* ========= QUOTE BAND ========= */
+.quote-band{background:var(--ink);padding:130px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.quote-inner{max-width:740px;margin:0 auto;text-align:center;}
+.quote-inner p.bn{font-size:15px;color:var(--gold-2);letter-spacing:0.02em;margin-bottom:22px;}
+.quote-inner blockquote{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(22px,3vw,34px);line-height:1.4;margin:0;color:var(--text-ink);}
+.quote-inner cite{display:block;margin-top:30px;font-style:normal;font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted-ink);}
+
+/* ========= LINK LIST (home quick-nav) ========= */
+.linklist{border-top:1px solid var(--line);}
+.linkrow{display:grid;grid-template-columns:140px 1fr auto;align-items:center;gap:32px;padding:34px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;transition:opacity .2s ease;}
+.linkrow:hover{opacity:0.7;}
+.linkrow .lr-eyebrow{font-size:11.5px;color:var(--gold-2);text-transform:uppercase;letter-spacing:0.06em;}
+.linkrow h4{font-family:'Fraunces',serif;font-size:23px;font-weight:500;margin:0;}
+.linkrow p{font-size:14.5px;color:var(--muted-ink);margin:6px 0 0;max-width:480px;}
+.linkrow .arrow{font-size:20px;color:var(--muted-ink);transition:transform .2s ease, color .2s ease;}
+.linkrow:hover .arrow{transform:translateX(4px);color:var(--gold-2);}
+@media (max-width:680px){.linkrow{grid-template-columns:1fr;gap:8px;}.linkrow .arrow{display:none;}}
+
+/* ========= CTA BAND ========= */
+.cta-band{position:relative;padding:130px 0;text-align:center;overflow:hidden;}
+.cta-media{position:absolute;inset:0;z-index:0;}
+.cta-media img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);}
+.cta-media::after{content:"";position:absolute;inset:0;background:rgba(13,13,15,0.72);}
+.cta-band .wrap{position:relative;z-index:1;}
+.cta-band h3{font-size:clamp(26px,3.4vw,38px);font-weight:500;color:#fff;max-width:600px;margin:0 auto 18px;}
+.cta-band p{color:rgba(242,239,231,0.75);max-width:480px;margin:0 auto 34px;font-size:15.5px;}
+
+/* ========= FOOTER ========= */
+footer{padding:80px 0 40px;background:var(--ink);}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:44px;margin-bottom:30px;}
+.foot-top h3{font-size:clamp(24px,3.2vw,34px);font-weight:500;max-width:520px;}
+.foot-note{font-size:12.5px;color:var(--muted-ink);max-width:480px;line-height:1.7;}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--muted-ink);}
+.foot-nav{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;font-size:13px;}
+.foot-nav a{text-decoration:none;color:var(--muted-ink);}
+.foot-nav a:hover{color:var(--gold-2);}
+
+</style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}.navlinks{position:static!important;transform:none!important;opacity:1!important;pointer-events:auto!important;display:flex!important;}.navtoggle{display:none!important;}</style></noscript>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="brand" href="index.html"><strong>Suvendu Adhikari</strong>&nbsp;· Office of the Chief Minister</a>
+    <button class="navtoggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <div class="navlinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="journey.html">The Journey</a>
+      <a href="cabinet.html">Cabinet</a>
+      <a href="districts.html">Districts</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="vision.html" class="cta">Sonar Bangla</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-media">
+    <img src="https://picsum.photos/seed/bengal-hero-skyline/1800/1400" alt="">
+  </div>
+  <span class="hero-cap">Editorial imagery · atmosphere only</span>
+  <div class="wrap">
+    <div class="eyebrow on-hero reveal in">Nabanna, Kolkata · Government of West Bengal</div>
+    <h1 class="hero-title reveal in">Bengal has a<br>new <em>Sonar</em> morning.</h1>
+    <p class="hero-sub reveal in">Six years of booth-to-booth organising, a historic mandate, and a government now building the West Bengal it promised. This is the record of how it happened — and what comes next.</p>
+    <div class="hero-ctas reveal in">
+      <a class="btn btn-primary" href="journey.html">See the full journey →</a>
+      <a class="btn btn-ghost" href="vision.html">The Sonar Bangla plan</a>
+    </div>
+    <div class="hero-meta reveal in">
+      <div><div class="m-num">206–208</div><div class="m-label">of 294 seats, 2026</div></div>
+      <div><div class="m-num">23</div><div class="m-label">Districts organised</div></div>
+      <div><div class="m-num">9th</div><div class="m-label">Chief Minister of Bengal</div></div>
+      <div><div class="m-num">15 yrs</div><div class="m-label">of TMC rule, ended</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="on-paper section-pad" id="about">
+  <div class="wrap">
+    <div class="intro reveal">
+      <div class="intro-figure">
+        <img src="https://picsum.photos/seed/bengal-portrait-frame/900/1125" alt="">
+      </div>
+      <div class="intro-body">
+        <p class="lede">A leader who was told the road back would take a generation did it in six years — one booth, one district, one karyakarta at a time.</p>
+        <p>Born on 15 December 1970 in Karkuli, Purba Medinipur, Suvendu Adhikari first drew statewide attention leading the 2007 Nandigram land-acquisition movement. He went on to serve as a two-term MP from Tamluk and a cabinet minister in the state government, before a decision in December 2020 reset Bengal's political map entirely.</p>
+        <p>On 9 May 2026, he took the oath as the ninth Chief Minister of West Bengal — the first from the Bharatiya Janata Party — closing one campaign and opening the next: building Sonar Bangla in office.</p>
+        <a class="btn btn-ghost" href="journey.html">Read the six-year timeline →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="quote-band">
+  <div class="wrap">
+    <div class="quote-inner reveal">
+      <p class="bn">সোনার বাংলা</p>
+      <blockquote>"The Sonar Bangla era has officially begun."</blockquote>
+      <cite>Suvendu Adhikari, on taking oath as Chief Minister — 9 May 2026</cite>
+    </div>
+  </div>
+</div>
+
+<section class="on-ink section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Explore</div>
+      <h2>The full story, by the numbers</h2>
+      <p>Four ways into the record — the road here, the team now in office, the state-wide organisation behind it, and the plan ahead.</p>
+    </div>
+    <div class="linklist reveal">
+      <a class="linkrow" href="journey.html">
+        <div class="lr-eyebrow">2020 – 2026</div>
+        <div>
+          <h4>The Journey</h4>
+          <p>From leaving the TMC to taking the oath at Brigade Parade Ground — the six-year timeline in full.</p>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+      <a class="linkrow" href="cabinet.html">
+        <div class="lr-eyebrow">Council of Ministers</div>
+        <div>
+          <h4>The Cabinet</h4>
+          <p>The ministers now running Bengal's departments, and the portfolios they've been handed.</p>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+      <a class="linkrow" href="districts.html">
+        <div class="lr-eyebrow">Statewide organisation</div>
+        <div>
+          <h4>23 Districts</h4>
+          <p>The booth-to-district structure that carried the campaign from Nandigram to Nabanna.</p>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+      <a class="linkrow" href="vision.html">
+        <div class="lr-eyebrow">In government</div>
+        <div>
+          <h4>Sonar Bangla</h4>
+          <p>What the new government has done in its first months, and where it says it's headed next.</p>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="cta-media">
+    <img src="https://picsum.photos/seed/bengal-districts-route/1800/900" alt="">
+  </div>
+  <div class="wrap">
+    <h3 class="reveal">Bengal's story is being written district by district.</h3>
+    <p class="reveal">Follow the government's work as it happens — from Nabanna to your own neighbourhood.</p>
+    <a class="btn btn-primary reveal" href="gallery.html">Browse the gallery →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <h3>A journey documented, still being written.</h3>
+      <p class="foot-note">This site traces Suvendu Adhikari's 2020–2026 journey and early government using publicly reported milestones. Passages describing internal party organisation, travel, and political allegations reflect accounts given by Adhikari, the BJP, or their supporters, and are labelled as such rather than presented as independently verified fact.</p>
+    </div>
+    <div class="foot-nav">
+      <a href="index.html">Home</a><a href="journey.html">The Journey</a><a href="cabinet.html">Cabinet</a>
+      <a href="districts.html">Districts</a><a href="gallery.html">Gallery</a><a href="vision.html">Sonar Bangla</a>
+    </div>
+    <div class="foot-bottom">
+      <span>Suvendu Adhikari · Chief Minister of West Bengal</span>
+      <span>Editorial imagery is stock photography, not verified photographs of the subject.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+(function(){
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.14});
+    els.forEach(el=>io.observe(el));
+  } else {
+    els.forEach(el=>el.classList.add('in'));
+  }
+})();
+
+// Fail-safe: guarantee content shows even if something above didn't fire
+setTimeout(function(){
+  document.querySelectorAll('.reveal:not(.in)').forEach(function(el){ el.classList.add('in'); });
+}, 1200);
+
+// Mobile nav toggle
+(function(){
+  const btn = document.querySelector('.navtoggle');
+  const links = document.querySelector('.navlinks');
+  if(!btn || !links) return;
+  btn.addEventListener('click', ()=>{
+    const open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.textContent = open ? '✕' : '☰';
+  });
+  links.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{ links.classList.remove('open'); btn.textContent='☰'; });
+  });
+})();
+
+</script>
+</body>
+</html>
