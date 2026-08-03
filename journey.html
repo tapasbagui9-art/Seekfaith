@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Journey, 2020–2026 — Suvendu Adhikari</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Tiro+Bangla&display=swap" rel="stylesheet">
+<style>
+/* ========= TOKENS ========= */
+:root{
+  --ink:#101a2b;
+  --ink-2:#182742;
+  --paper:#f3ecd9;
+  --paper-2:#ebe1c8;
+  --marigold:#e6a13a;
+  --marigold-2:#f2c069;
+  --sindoor:#9c2b3a;
+  --jute:#3a4a3b;
+  --ink-text:#f3ecd9;
+  --paper-text:#241d14;
+  --muted-ink:#aab4c9;
+  --muted-paper:#6b6250;
+  --rule:rgba(243,236,217,0.16);
+  --rule-dark:rgba(36,29,20,0.14);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;background:var(--ink);color:var(--ink-text);
+  font-family:'IBM Plex Sans', sans-serif;font-weight:400;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{font-family:'Fraunces', serif;font-weight:600;letter-spacing:-0.01em;margin:0;}
+.bn{font-family:'Tiro Bangla', serif;}
+a{color:inherit;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+::selection{background:var(--marigold);color:var(--ink);}
+:focus-visible{outline:2px solid var(--marigold);outline-offset:3px;}
+
+/* ========= NAV ========= */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(16,26,43,0.78);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);}
+nav{max-width:1120px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted-ink);text-decoration:none;}
+.brand strong{color:var(--ink-text);font-family:'Fraunces',serif;font-weight:600;font-size:16px;letter-spacing:0;text-transform:none;}
+.navlinks{display:flex;gap:26px;font-size:14px;align-items:center;}
+.navlinks a{text-decoration:none;color:var(--muted-ink);transition:color .2s;position:relative;}
+.navlinks a:hover,.navlinks a.active{color:var(--marigold-2);}
+.navlinks .cta{background:var(--marigold-2);color:var(--ink);padding:8px 16px;border-radius:100px;font-weight:600;font-size:13px;}
+.navlinks .cta:hover{color:var(--ink);opacity:0.9;}
+.navtoggle{display:none;background:none;border:none;color:var(--ink-text);font-size:22px;cursor:pointer;padding:4px;}
+@media (max-width:860px){
+  .navlinks{position:fixed;top:60px;left:0;right:0;background:var(--ink-2);flex-direction:column;align-items:flex-start;
+    padding:20px 32px 28px;gap:16px;border-bottom:1px solid var(--rule);transform:translateY(-130%);opacity:0;
+    transition:transform .25s ease, opacity .25s ease;pointer-events:none;}
+  .navlinks.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+  .navtoggle{display:block;}
+}
+
+/* ========= SUB-HERO (internal pages) ========= */
+.subhero{
+  padding:150px 0 70px;position:relative;overflow:hidden;background:var(--ink);
+}
+.subhero-glow{position:absolute;inset:0;background:radial-gradient(60% 60% at 85% 0%, rgba(230,161,58,0.24), transparent 65%);pointer-events:none;}
+.crumb{font-size:12.5px;color:var(--muted-ink);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:18px;position:relative;}
+.crumb a{color:var(--marigold-2);text-decoration:none;}
+.subhero h1{font-size:clamp(34px,5.6vw,60px);line-height:1.02;max-width:820px;position:relative;}
+.subhero p.lead{margin-top:20px;max-width:600px;font-size:17px;color:var(--muted-ink);position:relative;}
+
+/* ========= HERO (home) ========= */
+.hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:64px;padding-top:120px;}
+.hero-glow{position:absolute;inset:0;background:
+    radial-gradient(60% 50% at 78% 18%, rgba(230,161,58,0.30), transparent 70%),
+    radial-gradient(80% 60% at 15% 90%, rgba(156,43,58,0.18), transparent 70%);pointer-events:none;}
+.hero-rays{position:absolute;top:-20%;right:-10%;width:70%;aspect-ratio:1/1;opacity:0.5;pointer-events:none;}
+.hero-map{position:absolute;left:-8%;bottom:-12%;width:56%;opacity:0.14;pointer-events:none;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--marigold-2);margin-bottom:22px;}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--marigold-2);display:inline-block;}
+.hero-title{font-size:clamp(42px,7.4vw,96px);line-height:0.98;color:var(--ink-text);max-width:920px;position:relative;}
+.hero-title em{font-style:italic;font-weight:500;color:var(--marigold-2);}
+.hero-sub{margin-top:26px;max-width:560px;font-size:18px;color:var(--muted-ink);position:relative;}
+.hero-meta{margin-top:44px;display:flex;gap:44px;flex-wrap:wrap;position:relative;}
+.hero-meta .m-num{font-family:'Fraunces',serif;font-size:30px;color:var(--marigold-2);font-weight:600;}
+.hero-meta .m-label{font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted-ink);margin-top:4px;}
+.hero-ctas{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;position:relative;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:100px;font-size:14.5px;font-weight:600;text-decoration:none;transition:transform .18s ease, opacity .18s ease;}
+.btn:hover{transform:translateY(-1px);}
+.btn-primary{background:var(--marigold-2);color:var(--ink);}
+.btn-ghost{border:1px solid var(--rule);color:var(--ink-text);}
+.btn-ghost:hover{border-color:var(--marigold-2);color:var(--marigold-2);}
+.scroll-cue{position:absolute;bottom:28px;right:32px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-ink);writing-mode:vertical-rl;display:flex;align-items:center;gap:10px;}
+.scroll-cue .line{width:1px;height:46px;background:linear-gradient(var(--marigold-2),transparent);}
+
+/* ========= SECTION SHELLS ========= */
+section{position:relative;}
+.section-pad{padding:120px 0;}
+.section-pad-sm{padding:80px 0;}
+.on-paper{background:var(--paper);color:var(--paper-text);}
+.on-ink{background:var(--ink);color:var(--ink-text);}
+.section-head{max-width:640px;margin-bottom:64px;}
+.section-head .eyebrow{color:var(--sindoor);}
+.on-ink .section-head .eyebrow{color:var(--marigold-2);}
+.section-head .eyebrow::before{background:currentColor;}
+.section-head h2{font-size:clamp(30px,4.4vw,48px);line-height:1.05;}
+.section-head p{margin-top:18px;font-size:17px;color:var(--muted-paper);max-width:520px;}
+.on-ink .section-head p{color:var(--muted-ink);}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+/* ========= INTRO STRIP ========= */
+.intro{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:start;}
+@media (max-width:820px){.intro{grid-template-columns:1fr;gap:36px;}}
+.intro-figure{aspect-ratio:4/5;border-radius:4px;background:linear-gradient(160deg, var(--jute) 0%, #24301f 55%, var(--ink) 100%);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:22px;}
+.intro-figure::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 30% 10%, rgba(230,161,58,0.35), transparent 60%);}
+.intro-figure .tag{position:relative;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--marigold-2);}
+.intro-figure .placeholder-note{position:relative;color:rgba(243,236,217,0.55);font-size:12.5px;margin-top:6px;line-height:1.5;}
+.intro-body p{font-size:17.5px;margin:0 0 18px;}
+.intro-body p:last-child{margin-bottom:0;}
+.intro-body .lede{font-family:'Fraunces',serif;font-size:24px;font-weight:500;color:var(--paper-text);line-height:1.35;margin-bottom:24px;}
+
+/* ========= TIMELINE ========= */
+.timeline{position:relative;margin-top:8px;}
+.timeline::before{content:"";position:absolute;left:84px;top:6px;bottom:6px;width:1px;background:linear-gradient(var(--rule) 0%, var(--marigold) 8%, var(--rule) 92%);}
+@media (max-width:640px){.timeline::before{left:44px;}}
+.t-row{display:grid;grid-template-columns:84px 1fr;gap:0 40px;padding:34px 0;border-bottom:1px solid var(--rule);position:relative;}
+.t-row:last-child{border-bottom:none;}
+@media (max-width:640px){.t-row{grid-template-columns:44px 1fr;gap:0 20px;}}
+.t-row::after{content:"";position:absolute;left:84px;top:40px;width:9px;height:9px;border-radius:50%;background:var(--marigold-2);transform:translateX(-50%);}
+@media (max-width:640px){.t-row::after{left:44px;}}
+.t-year{font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:var(--marigold-2);position:relative;padding-top:2px;}
+.t-content h3{font-size:20px;font-weight:600;margin-bottom:10px;color:var(--ink-text);}
+.on-paper .t-content h3{color:var(--paper-text);}
+.t-content p{margin:0;color:var(--muted-ink);font-size:15.5px;max-width:640px;}
+.on-paper .t-content p{color:var(--muted-paper);}
+.t-content .t-tag{display:inline-block;font-size:11.5px;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink);background:var(--marigold-2);padding:3px 10px;border-radius:100px;margin-bottom:12px;font-weight:600;}
+.t-content .t-tag.alt{background:var(--sindoor);color:var(--ink-text);}
+
+/* ========= CLIMB (signature diagram) ========= */
+.climb{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+@media (max-width:900px){.climb{grid-template-columns:1fr;}}
+.climb-steps{display:flex;flex-direction:column-reverse;gap:0;}
+.climb-step{display:flex;align-items:center;gap:18px;padding:20px 0;border-top:1px solid var(--rule-dark);}
+.climb-step:first-child{border-top:none;}
+.climb-step .num{font-family:'Fraunces',serif;font-size:15px;color:var(--sindoor);width:28px;flex-shrink:0;}
+.climb-step .txt h4{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin:0 0 4px;}
+.climb-step .txt p{margin:0;font-size:14.5px;color:var(--muted-paper);max-width:420px;}
+.climb-visual{position:relative;aspect-ratio:1/1.05;}
+.climb-visual svg{width:100%;height:100%;}
+
+/* ========= QUOTE BAND ========= */
+.quote-band{background:var(--ink-2);padding:100px 0;position:relative;overflow:hidden;}
+.quote-band::before{content:"\201C";position:absolute;top:-40px;left:50%;transform:translateX(-50%);font-family:'Fraunces',serif;font-size:340px;color:rgba(230,161,58,0.08);line-height:1;}
+.quote-inner{max-width:760px;margin:0 auto;text-align:center;position:relative;}
+.quote-inner p.bn{font-size:15px;color:var(--marigold-2);letter-spacing:0.02em;margin-bottom:18px;}
+.quote-inner blockquote{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:clamp(24px,3.4vw,38px);line-height:1.3;margin:0;color:var(--ink-text);}
+.quote-inner cite{display:block;margin-top:28px;font-style:normal;font-size:13.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted-ink);}
+
+/* ========= CARDS / DUO ========= */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+@media (max-width:820px){.duo{grid-template-columns:1fr;}}
+.card{background:rgba(243,236,217,0.03);border:1px solid var(--rule);border-radius:6px;padding:34px;}
+.on-paper .card{background:#fff;border-color:var(--rule-dark);}
+.card .k{font-family:'Fraunces',serif;font-size:38px;color:var(--marigold-2);font-weight:600;}
+.on-paper .card .k{color:var(--sindoor);}
+.card h4{font-size:19px;margin:10px 0 10px;}
+.card p{font-size:15px;color:var(--muted-ink);margin:0;}
+.on-paper .card p{color:var(--muted-paper);}
+.note-line{margin-top:28px;font-size:13.5px;color:var(--muted-paper);border-left:2px solid var(--sindoor);padding-left:16px;}
+.on-ink .note-line{color:var(--muted-ink);}
+
+/* ========= 3-COL GRID ========= */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule-dark);border:1px solid var(--rule-dark);}
+@media (max-width:820px){.grid3{grid-template-columns:1fr;}}
+.grid3 .cell{background:var(--paper);padding:36px;}
+.grid3 .cell .tag{font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--sindoor);font-weight:600;}
+.grid3 .cell h4{font-family:'Fraunces',serif;font-size:21px;margin:14px 0 12px;}
+.grid3 .cell p{font-size:14.5px;color:var(--muted-paper);margin:0;}
+
+/* ========= STAT STRIP ========= */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+@media (max-width:720px){.stats{grid-template-columns:repeat(2,1fr);}}
+.stat{background:var(--ink);padding:38px 28px;}
+.stat .n{font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,40px);color:var(--marigold-2);font-weight:600;}
+.stat .l{font-size:12.5px;color:var(--muted-ink);letter-spacing:0.04em;margin-top:6px;}
+
+/* ========= CABINET GRID ========= */
+.cabinet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+@media (max-width:900px){.cabinet-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:600px){.cabinet-grid{grid-template-columns:1fr;}}
+.minister{background:var(--ink-2);border:1px solid var(--rule);border-radius:6px;padding:26px;}
+.minister .portrait{width:52px;height:52px;border-radius:50%;background:linear-gradient(150deg, var(--marigold-2), var(--sindoor));margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;color:var(--ink);font-size:18px;}
+.minister h4{font-size:17px;margin-bottom:4px;}
+.minister .role{font-size:12px;color:var(--marigold-2);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;}
+.minister .dept{font-size:14px;color:var(--muted-ink);margin:0 0 6px;}
+.minister .seat{font-size:12.5px;color:var(--muted-ink);opacity:0.75;}
+
+/* ========= DISTRICTS ========= */
+.district-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule-dark);border:1px solid var(--rule-dark);}
+@media (max-width:900px){.district-grid{grid-template-columns:repeat(3,1fr);}}
+@media (max-width:640px){.district-grid{grid-template-columns:repeat(2,1fr);}}
+.district-cell{background:var(--paper);padding:22px 18px;transition:background .2s ease;}
+.district-cell:hover{background:#fff;}
+.district-cell .d-num{font-size:11px;color:var(--sindoor);font-weight:600;letter-spacing:0.05em;}
+.district-cell h5{font-family:'Fraunces',serif;font-size:16px;margin:8px 0 0;font-weight:600;}
+
+/* ========= GALLERY ========= */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media (max-width:820px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:520px){.gallery-grid{grid-template-columns:1fr;}}
+.g-tile{aspect-ratio:4/3;border-radius:6px;position:relative;overflow:hidden;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;}
+.g-tile .g-bg{position:absolute;inset:0;}
+.g-tile .g-label{position:relative;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;color:rgba(243,236,217,0.85);}
+.g-tile .g-title{position:relative;font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:#fff;margin-top:4px;}
+.g1 .g-bg{background:linear-gradient(155deg,#3a4a3b,#101a2b);}
+.g2 .g-bg{background:linear-gradient(155deg,#9c2b3a,#101a2b);}
+.g3 .g-bg{background:linear-gradient(155deg,#e6a13a,#182742);}
+.g4 .g-bg{background:linear-gradient(155deg,#182742,#3a4a3b);}
+.g5 .g-bg{background:linear-gradient(155deg,#9c2b3a,#e6a13a);}
+.g6 .g-bg{background:linear-gradient(155deg,#101a2b,#9c2b3a);}
+
+/* ========= CTA BAND ========= */
+.cta-band{background:linear-gradient(120deg, var(--sindoor), #7a2130);padding:80px 0;text-align:center;}
+.cta-band h3{font-size:clamp(26px,3.6vw,38px);color:#fff;max-width:640px;margin:0 auto 18px;}
+.cta-band p{color:rgba(243,236,217,0.85);max-width:520px;margin:0 auto 32px;font-size:16px;}
+
+/* ========= LINK CARDS (home quick-nav) ========= */
+.linkcards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+@media (max-width:900px){.linkcards{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.linkcards{grid-template-columns:1fr;}}
+.linkcard{display:block;text-decoration:none;background:var(--ink-2);border:1px solid var(--rule);border-radius:8px;padding:28px 24px;transition:border-color .2s ease, transform .2s ease;}
+.linkcard:hover{border-color:var(--marigold-2);transform:translateY(-3px);}
+.linkcard .lc-eyebrow{font-size:11.5px;color:var(--marigold-2);text-transform:uppercase;letter-spacing:0.06em;}
+.linkcard h4{font-family:'Fraunces',serif;font-size:20px;margin:10px 0 8px;color:var(--ink-text);}
+.linkcard p{font-size:14px;color:var(--muted-ink);margin:0;}
+.linkcard .arrow{margin-top:16px;font-size:13px;color:var(--marigold-2);}
+
+/* ========= FOOTER ========= */
+footer{padding:70px 0 40px;background:var(--ink);}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;border-bottom:1px solid var(--rule);padding-bottom:40px;margin-bottom:28px;}
+.foot-top h3{font-size:clamp(26px,3.6vw,36px);max-width:520px;}
+.foot-note{font-size:13px;color:var(--muted-ink);max-width:520px;line-height:1.7;}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted-ink);}
+.foot-nav{display:flex;gap:24px;flex-wrap:wrap;margin-top:24px;font-size:13.5px;}
+.foot-nav a{text-decoration:none;color:var(--muted-ink);}
+.foot-nav a:hover{color:var(--marigold-2);}
+
+</style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}.navlinks{position:static!important;transform:none!important;opacity:1!important;pointer-events:auto!important;display:flex!important;}.navtoggle{display:none!important;}</style></noscript>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="brand" href="index.html"><strong>Suvendu Adhikari</strong>&nbsp;· Office of the Chief Minister</a>
+    <button class="navtoggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="journey.html" class="active">The Journey</a>
+      <a href="cabinet.html">Cabinet</a>
+      <a href="districts.html">Districts</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="vision.html" class="cta">Sonar Bangla</a>
+    </div>
+  </nav>
+</header>
+
+<section class="subhero">
+  <div class="subhero-glow"></div>
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">Home</a> / The Journey</div>
+    <h1>Six assembly years. One road to Nabanna.</h1>
+    <p class="lead">No single wave carried this campaign — it was built booth by booth, district by district, across six years on the opposition bench. Here is that road, year by year.</p>
+  </div>
+</section>
+
+<section class="on-ink section-pad">
+  <div class="wrap">
+    <div class="timeline">
+
+      <div class="t-row reveal">
+        <div class="t-year">2020</div>
+        <div class="t-content">
+          <span class="t-tag alt">Departure</span>
+          <h3>Leaves the TMC, joins the BJP</h3>
+          <p>In December 2020, Adhikari ended more than two decades with the Trinamool Congress and joined the BJP ahead of the 2021 assembly election — a move widely covered as one of the most consequential defections in the state's recent politics, and the first step of the six-year road to come.</p>
+        </div>
+      </div>
+
+      <div class="t-row reveal">
+        <div class="t-year">2021</div>
+        <div class="t-content">
+          <span class="t-tag">Nandigram</span>
+          <h3>Wins Nandigram, becomes Leader of the Opposition</h3>
+          <p>Contesting his home constituency on a BJP ticket, he defeated Chief Minister Mamata Banerjee in the closely watched Nandigram contest. Sworn in as an MLA in May 2021, he was named Leader of the Opposition in the West Bengal Assembly the same month — the BJP's most prominent face in the state, despite falling short of forming the government that year.</p>
+        </div>
+      </div>
+
+      <div class="t-row reveal">
+        <div class="t-year">2021–24</div>
+        <div class="t-content">
+          <span class="t-tag">Organisation</span>
+          <h3>Booth by booth, district by district</h3>
+          <p>The years on the opposition bench were spent largely outside Kolkata: a relentless travel schedule — by various party accounts, several hundred kilometres on many days — carried him from booth committees to district units across all 23 districts, rebuilding a cadre base and keeping in direct contact with karyakartas rather than governing from the Assembly floor.</p>
+        </div>
+      </div>
+
+      <div class="t-row reveal">
+        <div class="t-year">2024</div>
+        <div class="t-content">
+          <span class="t-tag alt">Setback</span>
+          <h3>Kanthi Lok Sabha</h3>
+          <p>Adhikari contested the Kanthi Lok Sabha seat on a BJP ticket in 2024 and did not win it — a reminder that the six years were not a straight line. The organisation he'd built kept working through the loss, and fed straight into the following campaign.</p>
+        </div>
+      </div>
+
+      <div class="t-row reveal">
+        <div class="t-year">2025</div>
+        <div class="t-content">
+          <span class="t-tag">Consolidation</span>
+          <h3>Sharpening the opposition machine</h3>
+          <p>As Leader of the Opposition, he continued to press the case against the TMC government on law and order and on the treatment of BJP workers, while turning the party's district committees toward the 2026 campaign in earnest.</p>
+        </div>
+      </div>
+
+      <div class="t-row reveal">
+        <div class="t-year">2026</div>
+        <div class="t-content">
+          <span class="t-tag">Victory</span>
+          <h3>A historic mandate</h3>
+          <p>Contesting both Nandigram and Bhabanipur in the 2026 assembly election, Adhikari won both — defeating Mamata Banerjee a second time, this time in her own Bhabanipur seat, by 73,917 votes. The BJP secured a landslide majority of around 206–208 of 294 seats, ending the TMC's fifteen-year hold on the state.</p>
+        </div>
+      </div>
+
+      <div class="t-row reveal">
+        <div class="t-year">9 May 2026</div>
+        <div class="t-content">
+          <span class="t-tag">Nabanna</span>
+          <h3>Sworn in as the 9th Chief Minister of West Bengal</h3>
+          <p>Elected leader of the BJP legislature party on 8 May, Adhikari took the oath of office the next day at Brigade Parade Ground in Kolkata — fittingly, on Rabindranath Tagore's birth anniversary — the first Chief Minister of West Bengal from the BJP, in a ceremony attended by the party's national leadership.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="quote-band">
+  <div class="wrap">
+    <div class="quote-inner reveal">
+      <p class="bn">সোনার বাংলা</p>
+      <blockquote>"The Sonar Bangla era has officially begun."</blockquote>
+      <cite>Suvendu Adhikari, on taking oath as Chief Minister — 9 May 2026</cite>
+    </div>
+  </div>
+</div>
+
+<section class="on-paper section-pad" id="climb">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Organisation</div>
+      <h2>Booth to Bhavan</h2>
+      <p>The climb that the campaign was actually built on — not a single wave, but a structure rebuilt one level at a time.</p>
+    </div>
+    <div class="climb">
+      <div class="climb-steps reveal">
+        <div class="climb-step">
+          <div class="num">01</div>
+          <div class="txt"><h4>Booth committees</h4><p>The base unit — a booth president and a small team responsible for every voter list in that booth.</p></div>
+        </div>
+        <div class="climb-step">
+          <div class="num">02</div>
+          <div class="txt"><h4>Mandal &amp; block units</h4><p>Booths grouped into blocks, coordinating logistics, local grievances, and turnout across a cluster of villages or wards.</p></div>
+        </div>
+        <div class="climb-step">
+          <div class="num">03</div>
+          <div class="txt"><h4>District committees</h4><p>All 23 districts brought under a direct reporting line to the state leadership, visited in person on a recurring cycle.</p></div>
+        </div>
+        <div class="climb-step">
+          <div class="num">04</div>
+          <div class="txt"><h4>State leadership</h4><p>Leader of the Opposition, coordinating strategy, candidate selection, and messaging across the state.</p></div>
+        </div>
+        <div class="climb-step">
+          <div class="num">05</div>
+          <div class="txt"><h4>Nabanna</h4><p>The state secretariat — the seat of the Chief Minister, and the structure's final step.</p></div>
+        </div>
+      </div>
+      <div class="climb-visual reveal">
+        <svg viewBox="0 0 340 380" fill="none">
+          <line x1="30" y1="350" x2="310" y2="350" stroke="#241d14" stroke-opacity="0.15"/>
+          <g stroke="#9c2b3a" stroke-width="1.6" fill="none" stroke-linecap="round">
+            <path d="M40 340 L90 300 L150 250 L210 180 L270 90 L300 40"/>
+          </g>
+          <g fill="#e6a13a" stroke="#241d14" stroke-opacity="0.1">
+            <circle cx="40" cy="340" r="7"/><circle cx="90" cy="300" r="7"/>
+            <circle cx="150" cy="250" r="7"/><circle cx="210" cy="180" r="7"/><circle cx="270" cy="90" r="8"/>
+          </g>
+          <circle cx="300" cy="40" r="11" fill="#9c2b3a"/>
+          <text x="52" y="365" font-family="IBM Plex Sans" font-size="11" fill="#6b6250">Booth</text>
+          <text x="98" y="322" font-family="IBM Plex Sans" font-size="11" fill="#6b6250">Block</text>
+          <text x="158" y="272" font-family="IBM Plex Sans" font-size="11" fill="#6b6250">District</text>
+          <text x="205" y="165" font-family="IBM Plex Sans" font-size="11" fill="#6b6250">State</text>
+          <text x="248" y="70" font-family="IBM Plex Sans" font-size="11.5" fill="#9c2b3a" font-weight="600">Nabanna</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="on-ink section-pad" id="karyakarta">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">On the opposition bench</div>
+      <h2>Standing with the karyakartas</h2>
+      <p>A central plank of Adhikari's six years in opposition was his role as the party's most visible defender of its own workers.</p>
+    </div>
+    <div class="duo reveal">
+      <div class="card">
+        <div class="k">01</div>
+        <h4>A vocal defence of party workers</h4>
+        <p>Throughout his tenure as Leader of the Opposition, Adhikari and other BJP leaders repeatedly alleged that party workers were being targeted with politically motivated cases by the state government, and he positioned himself as the leader who showed up — in courts, in districts, and at protests — on their behalf.</p>
+      </div>
+      <div class="card">
+        <div class="k">02</div>
+        <h4>Presence over distance</h4>
+        <p>Supporters point to his travel schedule as the practical form this took: district visits, local unit meetings, and direct contact with workers and families involved in disputed cases, rather than managing the opposition solely from Kolkata.</p>
+      </div>
+    </div>
+    <p class="note-line">These are characterisations made by Adhikari and the BJP during a period of sharp political contest with the TMC government; they reflect a contested political narrative rather than settled fact, and are presented here as part of the campaign's own account of these years.</p>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="n">206–208</div><div class="l">of 294 assembly seats won by the BJP in 2026</div></div>
+  <div class="stat"><div class="n">73,917</div><div class="l">votes by which he won Bhabanipur, defeating Mamata Banerjee</div></div>
+  <div class="stat"><div class="n">127,301</div><div class="l">votes in his Nandigram win the same year</div></div>
+  <div class="stat"><div class="n">15 yrs</div><div class="l">of TMC rule that ended with the 2026 result</div></div>
+</div>
+
+<div class="cta-band">
+  <div class="wrap">
+    <h3 class="reveal">The road didn't end at Nabanna.</h3>
+    <p class="reveal">See what the government built in its first months in office.</p>
+    <a class="btn btn-primary reveal" href="vision.html">Read the Sonar Bangla plan →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <h3>A journey documented, still being written.</h3>
+      <p class="foot-note">This page traces Suvendu Adhikari's 2020–2026 journey using publicly reported milestones. Sections describing internal party organisation, travel, and political allegations reflect accounts given by Adhikari, the BJP, or their supporters, and are labelled as such rather than presented as independently verified fact.</p>
+    </div>
+    <div class="foot-nav">
+      <a href="index.html">Home</a><a href="journey.html">The Journey</a><a href="cabinet.html">Cabinet</a>
+      <a href="districts.html">Districts</a><a href="gallery.html">Gallery</a><a href="vision.html">Sonar Bangla</a>
+    </div>
+    <div class="foot-bottom">
+      <span>Suvendu Adhikari · Chief Minister of West Bengal</span>
+      <span>Template site — replace placeholder imagery and copy before publishing</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+(function(){
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.14});
+    els.forEach(el=>io.observe(el));
+  } else {
+    els.forEach(el=>el.classList.add('in'));
+  }
+})();
+
+// Fail-safe: guarantee content shows even if something above didn't fire
+setTimeout(function(){
+  document.querySelectorAll('.reveal:not(.in)').forEach(function(el){ el.classList.add('in'); });
+}, 1200);
+
+// Mobile nav toggle
+(function(){
+  const btn = document.querySelector('.navtoggle');
+  const links = document.querySelector('.navlinks');
+  if(!btn || !links) return;
+  btn.addEventListener('click', ()=>{
+    const open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.textContent = open ? '\u2715' : '\u2630';
+  });
+  links.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{ links.classList.remove('open'); btn.textContent='\u2630'; });
+  });
+})();
+
+</script>
+</body>
+</html>
